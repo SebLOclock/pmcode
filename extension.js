@@ -114,14 +114,15 @@ function getWebviewContent(tasks) {
             }
             .column {
                 flex: 1;
-                border: 1px solid #ccc;
                 border-radius: 5px;
                 padding: 10px;
-                background-color: #f9f9f9;
                 min-height: 300px;
+                margin-top: 20px;
+                background-color: var(--vscode-editor-selectionBackground);
             }
             .task {
-                background-color: #fff;
+                background-color: var(--vscode-editor-background);
+                color: var(--vscode-editor-foreground);
                 margin-bottom: 10px;
                 padding: 10px;
                 border: 1px solid #ddd;
@@ -134,6 +135,12 @@ function getWebviewContent(tasks) {
             }
             button {
                 margin: 2px;
+                border: none;
+                border-radius: 5px;
+                background-color: var(--vscode-editor-selectionBackground);
+                color: var(--vscode-editor-selectionForeground);
+                padding: 5px;
+                font-size: 0.5em;
             }
         </style>
     </head>
@@ -158,6 +165,7 @@ function getWebviewContent(tasks) {
         <script>
             const vscode = acquireVsCodeApi();
 
+            
             function moveTask(taskId, currentStatus, filePath, line, newStatus) {
                 if (currentStatus !== newStatus) {
                     vscode.postMessage({
