@@ -1,65 +1,93 @@
-# pmcode README
+# PMCode 🚀
 
-This is the README for your extension "pmcode". After writing up a brief description, we recommend including the following sections.
+Bienvenue à **PMCode**, l'extension Visual Studio Code qui transforme la gestion de projet en un jeu d'enfant 🎉. Gardez le contrôle de vos tâches sans jamais quitter votre éditeur préféré 🖥️.
 
-## Features
+## 📝 Table of Contents
 
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
 
-For example if there is an image subfolder under your extension project workspace:
+- [PMCode 🚀](#pmcode-)
+  - [📝 Table of Contents](#-table-of-contents)
+  - [English Description 🇬🇧](#english-description-)
+    - [✨ Features](#-features)
+    - [🚀 How to use](#-how-to-use)
+      - [✍️ Create a task](#️-create-a-task)
+      - [🛠️ Open the Kanban view](#️-open-the-kanban-view)
+      - [🔄 Change the status of a task](#-change-the-status-of-a-task)
+      - [🔍 Go to the task](#-go-to-the-task)
+  - [Description en Français 🇫🇷](#description-en-français-)
+    - [✨ Fonctionnalités](#-fonctionnalités)
+    - [🚀 Comment l'utiliser](#-comment-lutiliser)
+      - [✍️ Créer une tâche](#️-créer-une-tâche)
+      - [🛠️ Ouvrir la vue Kanban](#️-ouvrir-la-vue-kanban)
+      - [🔄 Changer le statut d'une tâche](#-changer-le-statut-dune-tâche)
+      - [🔍 Aller à la tâche](#-aller-à-la-tâche)
 
-\!\[feature X\]\(images/feature-x.png\)
+## English Description 🇬🇧
 
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
+### ✨ Features
 
-## Requirements
+With PMCode, managing your project has never been so simple and fun! Enjoy a built-in Kanban view directly in VS Code 📝.
 
-If you have any requirements or dependencies, add a section describing those and how to install and configure them.
+- 📌 Create tasks as comments in your code.
+- 🗂️ View all tasks in an easy-to-read Kanban board.
+- ✅ Update task statuses (To Do, WIP, Blocked, Done) with a single click.
+- 🔗 Jump straight to the code from the Kanban view.
 
-## Extension Settings
+### 🚀 How to use
 
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
+#### ✍️ Create a task
+Write a comment in your code following this format:
 
-For example:
+```javascript
+// pmcode.todo: Create a new feature
+// pmcode.wip: Work on the API integration
+// pmcode.blocked: Waiting for review
+// pmcode.done: Completed the UI component
+```
 
-This extension contributes the following settings:
+✨ Your task will appear in the Kanban view automatically!
 
-* `myExtension.enable`: Enable/disable this extension.
-* `myExtension.thing`: Set to `blah` to do something.
+#### 🛠️ Open the Kanban view
+Use the command PMCode: Open Kanban View in the command palette to see your project overview.
 
-## Known Issues
+#### 🔄 Change the status of a task
+Simply click the buttons in the Kanban view or update the comment directly in your code.
 
-Calling out known issues can help limit users opening duplicate issues against your extension.
+#### 🔍 Go to the task
+Click on any task in the Kanban view to jump right to that line in your code! 🏃‍♂️💨
 
-## Release Notes
+## Description en Français 🇫🇷
 
-Users appreciate release notes as you update your extension.
+### ✨ Fonctionnalités
 
-### 1.0.0
+PMCode vous simplifie la vie en gérant vos projets sous forme de Kanban directement dans VS Code 📝.
 
-Initial release of ...
+- 📌 Créez des tâches sous forme de commentaires dans votre code.
+- 🗂️ Visualisez toutes vos tâches dans une vue Kanban facile à lire.
+- ✅ Changez le statut des tâches (À faire, En cours, Bloqué, Fait) en un clic.
+- 🔗 Accédez directement à votre code depuis la vue Kanban.
 
-### 1.0.1
+### 🚀 Comment l'utiliser
 
-Fixed issue #.
+#### ✍️ Créer une tâche
+Écrivez un commentaire dans votre code avec ce format :
 
-### 1.1.0
+```javascript
+// pmcode.todo: Ajouter une fonctionnalité
+// pmcode.wip: Travailler sur l'intégration de l'API
+// pmcode.blocked: En attente de validation
+// pmcode.done: Composant UI terminé
+```
 
-Added features X, Y, and Z.
+✨ Votre tâche apparaîtra automatiquement dans la vue Kanban !
 
----
+#### 🛠️ Ouvrir la vue Kanban
+Utilisez la commande PMCode: Open Kanban View dans la palette de commandes pour voir l'ensemble de votre projet.
 
-## Working with Markdown
+#### 🔄 Changer le statut d'une tâche
+Utilisez simplement les boutons dans la vue Kanban ou modifiez le commentaire dans votre code.
 
-You can author your README using Visual Studio Code.  Here are some useful editor keyboard shortcuts:
+#### 🔍 Aller à la tâche
+Cliquez sur une tâche dans la vue Kanban pour accéder directement à la ligne de code ! 🏃‍♂️💨
 
-* Split the editor (`Cmd+\` on macOS or `Ctrl+\` on Windows and Linux)
-* Toggle preview (`Shift+Cmd+V` on macOS or `Shift+Ctrl+V` on Windows and Linux)
-* Press `Ctrl+Space` (Windows, Linux, macOS) to see a list of Markdown snippets
 
-## For more information
-
-* [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-* [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
-
-**Enjoy!**
