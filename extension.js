@@ -89,13 +89,11 @@ async function analyzeProjectForTasks() {
 
 function getWebviewContent(tasks) {
     function createTaskElement(task) {
-        return `<div id="${task.id}" class="task" data-status="${task.status}" data-file="${task.filePath}" data-line="${task.line}" onclick="openFile('${task.filePath}', ${task.line})">
+        return `<div id="${task.id}" class="task" data-status="${task.status}" data-file="${task.filePath}" data-line="${task.line}" draggable="true" ondragstart="onDragStart(event)">
                     ${task.description}
+                    <hr>
                     <div>
-                        <button onclick="event.stopPropagation(); moveTask('${task.id}', '${task.status}', '${task.filePath}', '${task.line}', 'todo')">To TODO</button>
-                        <button onclick="event.stopPropagation(); moveTask('${task.id}', '${task.status}', '${task.filePath}', '${task.line}', 'wip')">To WIP</button>
-                        <button onclick="event.stopPropagation(); moveTask('${task.id}', '${task.status}', '${task.filePath}', '${task.line}', 'blocked')">To Blocked</button>
-                        <button onclick="event.stopPropagation(); moveTask('${task.id}', '${task.status}', '${task.filePath}', '${task.line}', 'done')">To Done</button>
+                        <button onclick="openFile('${task.filePath}', ${task.line})">Go to task</button>
                     </div>
                 </div>`;
     }
@@ -140,24 +138,24 @@ function getWebviewContent(tasks) {
                 background-color: var(--vscode-editor-selectionBackground);
                 color: var(--vscode-editor-selectionForeground);
                 padding: 5px;
-                font-size: 0.5em;
+                font-size: 0.8em;
             }
         </style>
     </head>
     <body>
-        <div class="column" id="todo">
+        <div class="column" id="todo" ondragover="onDragOver(event)" ondrop="onDrop(event, 'todo')">
             <div class="column-title">TODO</div>
             ${tasks.filter(task => task.status === 'todo').map(createTaskElement).join('')}
         </div>
-        <div class="column" id="wip">
+        <div class="column" id="wip" ondragover="onDragOver(event)" ondrop="onDrop(event, 'wip')">
             <div class="column-title">WIP</div>
             ${tasks.filter(task => task.status === 'wip').map(createTaskElement).join('')}
         </div>
-        <div class="column" id="blocked">
+        <div class="column" id="blocked" ondragover="onDragOver(event)" ondrop="onDrop(event, 'blocked')">
             <div class="column-title">Blocked</div>
             ${tasks.filter(task => task.status === 'blocked').map(createTaskElement).join('')}
         </div>
-        <div class="column" id="done">
+        <div class="column" id="done" ondragover="onDragOver(event)" ondrop="onDrop(event, 'done')">
             <div class="column-title">Done</div>
             ${tasks.filter(task => task.status === 'done').map(createTaskElement).join('')}
         </div>
@@ -165,17 +163,28 @@ function getWebviewContent(tasks) {
         <script>
             const vscode = acquireVsCodeApi();
 
-            
-            function moveTask(taskId, currentStatus, filePath, line, newStatus) {
-                if (currentStatus !== newStatus) {
-                    vscode.postMessage({
-                        command: 'moveTask',
-                        taskId: taskId,
-                        newStatus: newStatus,
-                        filePath: filePath,
-                        line: line
-                    });
-                }
+            function onDragStart(event) {
+                event.dataTransfer.setData('text/plain', JSON.stringify({
+                    id: event.target.id,
+                    filePath: event.target.getAttribute('data-file'),
+                    line: event.target.getAttribute('data-line'),
+                }));
+            }
+
+            function onDragOver(event) {
+                event.preventDefault();
+            }
+
+            function onDrop(event, newStatus) {
+                event.preventDefault();
+                const taskData = JSON.parse(event.dataTransfer.getData('text/plain'));
+
+                vscode.postMessage({
+                    command: 'moveTask',
+                    filePath: taskData.filePath,
+                    line: taskData.line,
+                    newStatus: newStatus
+                });
             }
 
             function openFile(filePath, line) {
@@ -189,6 +198,7 @@ function getWebviewContent(tasks) {
     </body>
     </html>`;
 }
+
 
 function deactivate() { }
 
