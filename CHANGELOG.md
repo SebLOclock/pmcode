@@ -2,6 +2,25 @@
 
 All notable changes to this project will be documented in this file.
 
+
+## [1.0.4] - 2024-11-08
+## fixed
+- Security control to avoid the execution of malicious code.
+- Security control to avoid the execution of unallowed commands.
+
+## changed
+- Removing the 'Go to code' button from the task view.
+- Adding the path of the file in the task view.
+- Adding action on file path to open the file in the editor.
+
+## [1.0.3] - 2024-11-08
+## added
+- Refactor the code into a MVC architecture.
+
+## [1.0.2] - 2024-11-07
+## fixed
+- Incoherence between the category of the extension and the command name.
+
 ## [1.0.1] - 2024-11-07
 ## added
 - The extension has now its own icon.

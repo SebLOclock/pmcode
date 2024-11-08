@@ -1,5 +1,7 @@
 # PMCode 🚀
 
+![PMCode](./assets/pmcode-v104.png)
+
 Bienvenue à **PMCode**, l'extension Visual Studio Code qui transforme la gestion de projet en un jeu d'enfant 🎉. Gardez le contrôle de vos tâches sans jamais quitter votre éditeur préféré 🖥️.
 
 ## 📝 Table of Contents
@@ -51,10 +53,10 @@ Write a comment in your code following this format:
 Use the command PMCode: Open Kanban View in the command palette to see your project overview.
 
 #### 🔄 Change the status of a task
-Simply click the buttons in the Kanban view or update the comment directly in your code.
+Drag and drop tasks between columns in the Kanban board or update the comment in your code.
 
 #### 🔍 Go to the task
-Click on any task in the Kanban view to jump right to that line in your code! 🏃‍♂️💨
+Click on the filepath in the Kanban view to open the file in the editor and jump to the task line! 🏃‍♂️💨
 
 ## Description en Français 🇫🇷
 
@@ -85,9 +87,9 @@ PMCode vous simplifie la vie en gérant vos projets sous forme de Kanban directe
 Utilisez la commande PMCode: Open Kanban View dans la palette de commandes pour voir l'ensemble de votre projet.
 
 #### 🔄 Changer le statut d'une tâche
-Utilisez simplement les boutons dans la vue Kanban ou modifiez le commentaire dans votre code.
+Faites glisser-déposer les tâches entre les colonnes du tableau Kanban ou mettez à jour le commentaire dans votre code.
 
 #### 🔍 Aller à la tâche
-Cliquez sur une tâche dans la vue Kanban pour accéder directement à la ligne de code ! 🏃‍♂️💨
+Cliquer sur le chemin du fichier dans la vue Kanban pour ouvrir le fichier dans l'éditeur et accéder directement à la ligne de la tâche ! 🏃‍♂️💨
 
 
