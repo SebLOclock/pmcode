@@ -1,5 +1,8 @@
-
+const vscode = require('vscode');
 function getWebviewContent(tasks) {
+
+    const projectNmae = vscode.workspace.name || 'Project';
+
     function createTaskElement(task) {
 
         return `<div id="${task.id}" class="task" data-status="${task.status}" data-file="${task.filePath}" data-line="${task.line}" draggable="true" ondragstart="onDragStart(event)">
@@ -17,7 +20,7 @@ function getWebviewContent(tasks) {
         <meta charset="UTF-8">
         <title>Kanban</title>
         <style>
-            body {
+            .container {
                 display: flex;
                 gap: 20px;
                 font-family: sans-serif;
@@ -55,9 +58,22 @@ function getWebviewContent(tasks) {
                 text-decoration: underline;
                 cursor: pointer;
             }
+
+            .header {
+                display: flex;
+                gap: 10px;
+                margin-bottom: 20px;
+                border-bottom: 1px solid var(--vscode-editor-foreground);
+                color: var(--vscode-editor-selectionForeground);
+            }
         </style>
     </head>
     <body>
+        <div class="header">
+            <h1>${projectNmae} - Kanban</h1>
+        </div>
+        
+        <div class="container">
         <div class="column" id="todo" ondragover="onDragOver(event)" ondrop="onDrop(event, 'todo')">
             <div class="column-title">TODO</div>
             ${tasks.filter(task => task.status === 'todo').map(createTaskElement).join('')}
@@ -73,6 +89,7 @@ function getWebviewContent(tasks) {
         <div class="column" id="done" ondragover="onDragOver(event)" ondrop="onDrop(event, 'done')">
             <div class="column-title">Done</div>
             ${tasks.filter(task => task.status === 'done').map(createTaskElement).join('')}
+        </div>
         </div>
 
         <script>

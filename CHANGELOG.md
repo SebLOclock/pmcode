@@ -2,6 +2,11 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.0.5] - 2024-11-15
+## added
+- Reading more files in the project to extract tasks from formatted comments.
+  - Supported file extensions: `.js`, `.ts`, `.jsx`, `.tsx`, `.html`, `.css`, `.scss`, `.less`, `.json`, `.md`, `.markdown`, `.yaml`, `.yml`, `.xml`, `.php`, `.py`, `.java`, `.c`, `.cpp`, `.h`, `.hpp`, `.cs`, `.vb`, `.fs`, `.fsx`, `.fsi`, `.sql`, `.sh`, `.bat`, `.cmd`, `.ps1`, `.psm1`, `.psd1`, `.pl`, `.pm`, `.t`, `.r`, `.rb`, `.rake`, `.gemspec`, `.lua`, `.go`, `.dart`, `.swift`, `.m`, `.mm`, `.groovy`, `.kt`, `.kts`, `.clj`, `.cljs`, `.cljc`, `.edn`, `.scala`, `.sc`, `.sbt`, `.gradle`, `.rs`, `.toml`
+- Adding a tittle to the Kanban view.
 
 ## [1.0.4] - 2024-11-08
 ## fixed
