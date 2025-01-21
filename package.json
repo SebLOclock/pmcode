@@ -3,7 +3,7 @@
   "displayName": "PMCode",
   "description": "a kanban into vscode",
   "publisher": "SebLOclock",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "icon": "./assets/favicon.ico",
   "repository": {
     "type": "git",
