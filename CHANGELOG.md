@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.0.5] - 2025-01-21
+
+### fixed
+- Fixed a bug where the extension would not load the tasks from the project files.
+
+
 ## [1.0.5] - 2024-11-15
 ## added
 - Reading more files in the project to extract tasks from formatted comments.

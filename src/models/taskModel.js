@@ -3,7 +3,7 @@ const vscode = require('vscode');
 async function analyzeProjectForTasks() {
     const tasks = [];
 
-    const files = await vscode.workspace.findFiles('**/*.{ js, ts, jsx,tsx, html,css,scss,less,json,md,markdown,yaml,yml,xml,php,py,java,c,cpp,h,hpp,cs,vb,fs,fsx,fsi,sql,sh,bat,cmd,ps1,psm1,psd1,pl,.pm,t,r,rb,rake,gemspec,lua,go,dart,swift,m,mm,groovy, kt, kts, clj,cljs,cljc,edn,scala,sc,sbt,gradle,rs,toml}');
+    const files = await vscode.workspace.findFiles('**/*.{js,ts,jsx,tsx,html,css,scss,less,json,md,markdown,yaml,yml,xml,php,py,java,c,cpp,h,hpp,cs,vb,fs,fsx,fsi,sql,sh,bat,cmd,ps1,psm1,psd1,pl,.pm,t,r,rb,rake,gemspec,lua,go,dart,swift,m,mm,groovy,kt,kts,clj,cljs,cljc,edn,scala,sc,sbt,gradle,rs,toml}');
 
     for (const file of files) {
         const document = await vscode.workspace.openTextDocument(file);
